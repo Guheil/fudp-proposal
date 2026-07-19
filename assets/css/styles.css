@@ -312,9 +312,9 @@ button { color: inherit; }
 .night-clock h2 em { font-family: var(--serif); font-weight: 400; font-style: italic; }
 .night-time { font-size: clamp(70px, 10vw, 150px); line-height: .8; letter-spacing: -.075em; }
 .night-steps { position: relative; height: 100%; min-height: 0; }
-.night-step { position: absolute; inset: 50% 0 auto; transform: translateY(-50%); display: grid; grid-template-columns: 1fr .72fr; gap: 40px; align-items: center; opacity: 0; pointer-events: none; }
+.night-step { position: absolute; inset: calc(50% + 44px) 0 auto; transform: translateY(-50%); display: grid; grid-template-columns: 1fr .72fr; gap: 40px; align-items: center; opacity: 0; pointer-events: none; }
 .night-step.is-active { opacity: 1; pointer-events: auto; }
-.night-step img { height: min(56vh, 630px); object-fit: cover; }
+.night-step img { height: min(50vh, 580px); object-fit: cover; }
 .night-step h3 { margin: 0; font-size: clamp(42px, 5vw, 76px); line-height: .95; letter-spacing: -.055em; font-weight: 520; }
 .night-step p { margin: 22px 0 0; max-width: 420px; font-size: 17px; color: rgba(255,255,255,.72); }
 
@@ -552,7 +552,7 @@ button { color: inherit; }
   .night-story-shell { height: auto; min-height: auto; padding: 100px 0; }
   .night-clock { min-height: 48vh; border-right: 0; border-bottom: 1px solid var(--line-light); padding: 0 0 50px; }
   .night-steps { min-height: 78vh; }
-  .night-step { grid-template-columns: 1fr; }
+  .night-step { inset: 50% 0 auto; grid-template-columns: 1fr; }
   .night-step img { height: 48vh; }
   .page-hero-inner { padding-top: 135px; }
   .page-hero h1 { font-size: clamp(62px, 14vw, 110px); }
@@ -582,7 +582,7 @@ button { color: inherit; }
   .food-story h3 { font-size: clamp(48px, 13vw, 70px); }
   .food-price { display: grid; }
   .food-price span:last-child { text-align: left; }
-  .night-step { grid-template-columns: 1fr; }
+  .night-step { inset: 50% 0 auto; grid-template-columns: 1fr; }
   .night-step img { height: 40vh; }
   .night-time { font-size: 72px; }
   .full-bleed-copy p { margin-left: 0; }
