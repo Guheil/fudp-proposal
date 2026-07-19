@@ -9,6 +9,7 @@ A multi-page static concept website for Elyu's Food Park in San Fernando City, L
 - `events.html` — editorial event formats and contact flow
 - `about.html` — place story without invented business claims
 - `visit.html` — directions, practical details, and embedded map
+- `contact.html` — event invitation inquiry form, stall request guidance, and official contact path
 - `404.html` — custom error page
 
 ## Design direction
@@ -19,7 +20,7 @@ A multi-page static concept website for Elyu's Food Park in San Fernando City, L
 - No repeated bento-grid sections
 - Large food photography and direct typography
 - Transparent header over imagery, becoming solid after scrolling
-- Responsive mobile navigation
+- Responsive mobile navigation with explicit Home and Contact links
 
 ## Motion
 

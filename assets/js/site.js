@@ -68,6 +68,47 @@
     });
   }
 
+
+  const inquiryForm = document.querySelector('[data-event-inquiry-form]');
+  if (inquiryForm) {
+    const preparedWrap = inquiryForm.querySelector('[data-prepared-inquiry]');
+    const preparedMessage = inquiryForm.querySelector('[data-prepared-message]');
+    const formStatus = inquiryForm.querySelector('[data-form-status]');
+
+    inquiryForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const data = new FormData(inquiryForm);
+      const categories = data.getAll('categories');
+      const message = [
+        'Event inquiry for Elyu\'s Food Park',
+        '',
+        `Name: ${data.get('name') || ''}`,
+        `Email: ${data.get('email') || ''}`,
+        `Contact number: ${data.get('phone') || ''}`,
+        `Event type: ${data.get('eventType') || ''}`,
+        `Event date: ${data.get('eventDate') || ''}`,
+        `Event location: ${data.get('eventLocation') || ''}`,
+        `Number of stalls needed: ${data.get('stalls') || ''}`,
+        `Preferred food categories: ${categories.length ? categories.join(', ') : 'Not specified'}`,
+        '',
+        'Notes / special requests:',
+        data.get('notes') || 'None yet.'
+      ].join('\n');
+
+      if (preparedMessage) preparedMessage.value = message;
+      if (preparedWrap) preparedWrap.hidden = false;
+
+      try {
+        await navigator.clipboard?.writeText(message);
+        if (formStatus) formStatus.textContent = 'Message prepared and copied. Paste it into the official Facebook page to send.';
+      } catch (error) {
+        if (formStatus) formStatus.textContent = 'Message prepared. Copy it and send it to the official Facebook page.';
+      }
+
+      preparedMessage?.focus();
+    });
+  }
+
   const reveals = document.querySelectorAll('.reveal');
   if (reducedMotion || !window.gsap || !window.ScrollTrigger) {
     reveals.forEach((element) => {
